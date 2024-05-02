@@ -1,9 +1,11 @@
 import cv2
 import numpy as np
 
-photo = np.zeros((800, 800, 4), dtype='uint8')
+photo = np.zeros((800, 800, 3), dtype='uint8')
 
-
+num = 255 /800
+for i in range(1,800):
+    photo[0:800,i] = (i*num,i*num,i*num)
 
 cv2.circle(photo, (photo.shape[1] // 2, photo.shape[1] // 2), 350, (255, 255, 255), thickness=10)
 
